@@ -132,6 +132,7 @@
         </div>
       </div>
     </div>
+    @can('app.categories.index')
 
     <!-- Category -->
     <div data-nav-group data-open="false">
@@ -155,13 +156,13 @@
           <div class="mt-0.5 space-y-0.5 pl-9 text-[13px]">
             <a
               data-nav="categories"
-              href="categories.html"
+              href="{{ route('app.categories.index') }}"
               class="block rounded-base px-2 py-2 text-ink-500 transition-colors hover:bg-surface-muted hover:text-ink-900"
               >Category List</a
             >
             <a
               data-nav="add-category"
-              href="add-category.html"
+              href="{{ route('app.categories.create') }}"
               class="block rounded-base px-2 py-2 text-ink-500 transition-colors hover:bg-surface-muted hover:text-ink-900"
               >Add New Category</a
             >
@@ -176,6 +177,9 @@
       </div>
     </div>
 
+
+    @endcan
+    @can('app.brands.index')
     <!-- Brand -->
     <div data-nav-group data-open="false">
       <button
@@ -198,13 +202,13 @@
           <div class="mt-0.5 space-y-0.5 pl-9 text-[13px]">
             <a
               data-nav="brands"
-              href="brands.html"
+              href="{{ route('app.brands.index') }}"
               class="block rounded-base px-2 py-2 text-ink-500 transition-colors hover:bg-surface-muted hover:text-ink-900"
               >Brand List</a
             >
             <a
               data-nav="add-brand"
-              href="add-brand.html"
+              href="{{ route('app.brands.create') }}"
               class="block rounded-base px-2 py-2 text-ink-500 transition-colors hover:bg-surface-muted hover:text-ink-900"
               >Add New Brand</a
             >
@@ -219,6 +223,8 @@
       </div>
     </div>
 
+
+    @endcan
     <!-- Attributes -->
     <div data-nav-group data-open="false">
       <button

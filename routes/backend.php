@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Backend\BrandController;
+use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\Backend\RoleController;
@@ -17,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+// Catalog management
+Route::resource('brands', BrandController::class)->except('show');
+Route::resource('categories', CategoryController::class)->except('show');
 
 // User management
 Route::put('/users/{user}/status', [UserController::class, 'statusChange'])->name('users.status');

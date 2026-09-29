@@ -70,6 +70,52 @@ class PermissionSeeder extends Seeder
             'slug' => 'app.backups.destroy',
         ]);
 
+        // Brand management
+        $moduleAppBrand = Module::updateOrCreate(['name' => 'Brand Management']);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppBrand->id,
+            'name' => 'Access Brands',
+            'slug' => 'app.brands.index',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppBrand->id,
+            'name' => 'Create Brand',
+            'slug' => 'app.brands.create',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppBrand->id,
+            'name' => 'Edit Brand',
+            'slug' => 'app.brands.edit',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppBrand->id,
+            'name' => 'Delete Brand',
+            'slug' => 'app.brands.destroy',
+        ]);
+
+        // Category management
+        $moduleAppCategory = Module::updateOrCreate(['name' => 'Category Management']);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppCategory->id,
+            'name' => 'Access Categories',
+            'slug' => 'app.categories.index',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppCategory->id,
+            'name' => 'Create Category',
+            'slug' => 'app.categories.create',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppCategory->id,
+            'name' => 'Edit Category',
+            'slug' => 'app.categories.edit',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppCategory->id,
+            'name' => 'Delete Category',
+            'slug' => 'app.categories.destroy',
+        ]);
+
         // Role management
         $moduleAppRole = Module::updateOrCreate(['name' => 'Role Management']);
         Permission::updateOrCreate([

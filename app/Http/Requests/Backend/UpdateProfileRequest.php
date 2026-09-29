@@ -19,6 +19,8 @@ class UpdateProfileRequest extends FormRequest
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,'.$this->user()->id],
             'avatar' => ['nullable', 'image', 'max:2048'],
+            'phone' => ['nullable', 'string', 'max:30'],
+            'address' => ['nullable', 'string', 'max:500'],
         ];
     }
 }

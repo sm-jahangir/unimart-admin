@@ -21,7 +21,14 @@ class UserController extends Controller
 
         $users = User::with('role')->latest()->paginate(15);
 
-        return view('backend.users.index', compact('users'));
+        return view('backend.users.index', [
+            'users' => $users,
+            'stats' => [
+                'total' => User::count(),
+                'active' => User::where('status', true)->count(),
+                'inactive' => User::where('status', false)->count(),
+            ],
+        ]);
     }
 
     /**

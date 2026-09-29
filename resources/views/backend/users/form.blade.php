@@ -78,6 +78,16 @@
                 @error('email')<p class="mt-1 text-[12px] text-danger-600">{{ $message }}</p>@enderror
               </label>
               <label class="block">
+                <span class="text-[13px] font-semibold text-ink-700">Phone</span>
+                <input
+                  name="phone"
+                  value="{{ old('phone', $user->phone) }}"
+                  placeholder="+8801XXXXXXXXX"
+                  class="mt-1.5 h-11 w-full rounded-base border border-surface-line bg-surface-body px-3 text-[14px] focus:border-brand-600"
+                />
+                @error('phone')<p class="mt-1 text-[12px] text-danger-600">{{ $message }}</p>@enderror
+              </label>
+              <label class="block">
                 <span class="text-[13px] font-semibold text-ink-700">
                   Password
                   @if ($user->exists) <span class="font-normal text-ink-500">(leave empty to keep current)</span>@endif
@@ -101,6 +111,14 @@
                   autocomplete="new-password"
                   class="mt-1.5 h-11 w-full rounded-base border border-surface-line bg-surface-body px-3 text-[14px] focus:border-brand-600"
                 />
+              </label>
+              <label class="block md:col-span-2">
+                <span class="text-[13px] font-semibold text-ink-700">Address</span>
+                <textarea
+                  name="address"
+                  rows="3"
+                  class="mt-1.5 w-full resize-y rounded-base border border-surface-line bg-surface-body px-3 py-3 text-[14px] focus:border-brand-600"
+                >{{ old('address', $user->address) }}</textarea>
               </label>
             </div>
           </article>
