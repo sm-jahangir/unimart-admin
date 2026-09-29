@@ -1,18 +1,28 @@
 <?php
 
+use App\Http\Middleware\AuthGates;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
         web: __DIR__.'/../routes/web.php',
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
+        then: function (): void {
+            Route::middleware(['web', 'auth'])
+                ->prefix('app')
+                ->name('app.')
+                ->group(__DIR__.'/../routes/backend.php');
+        },
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        // Defines one Gate per permission slug on every web request,
+        // so Gate::authorize('app.users.index') works app-wide.
+        $middleware->web(append: AuthGates::class);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(

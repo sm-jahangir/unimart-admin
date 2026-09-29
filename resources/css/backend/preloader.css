@@ -1,0 +1,146 @@
+/* Preloader styles — kept critical-adjacent: loaded via Vite from <head>. */
+/* Originally inline in the backend layout to avoid an unstyled first paint. */
+      .rbt-preloader {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #ffffff;
+        transition:
+          opacity 0.3s ease,
+          visibility 0.3s ease;
+      }
+      html.dark .rbt-preloader {
+        background: #181d29;
+      }
+      .rbt-preloader.is-loaded {
+        opacity: 0;
+        visibility: hidden;
+      }
+      .rbt-preloader-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .rbt-preloader-cart {
+        display: block;
+        width: 72px;
+        height: 72px;
+        margin: 0 auto 1.25em auto;
+      }
+      .preloader-text {
+        position: relative;
+        height: 1.4em;
+        width: 280px;
+      }
+      .preloader-msg {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        text-align: center;
+        font-family: 'Cabin', sans-serif;
+        font-size: 14px;
+        color: #555555;
+        animation: ldr-msg 0.3s 13.7s linear forwards;
+      }
+      html.dark .preloader-msg {
+        color: #94a3b8;
+      }
+      .preloader-msg--last {
+        visibility: hidden;
+        animation-direction: reverse;
+        animation-delay: 14s;
+      }
+      .rbt-preloader-cart-lines,
+      .rbt-preloader-cart-top,
+      .rbt-preloader-cart-wheel1,
+      .rbt-preloader-cart-wheel2,
+      .rbt-preloader-cart-wheel-stroke {
+        animation: ldr-cartLines 2s ease-in-out infinite;
+      }
+      .rbt-preloader-cart-lines {
+        stroke: #215ada;
+      }
+      .rbt-preloader-cart-top {
+        animation-name: ldr-cartTop;
+      }
+      .rbt-preloader-cart-wheel1 {
+        animation-name: ldr-cartWheel1;
+        transform: rotate(-0.25turn);
+        transform-origin: 43px 111px;
+      }
+      .rbt-preloader-cart-wheel2 {
+        animation-name: ldr-cartWheel2;
+        transform: rotate(0.25turn);
+        transform-origin: 102px 111px;
+      }
+      .rbt-preloader-cart-wheel-stroke {
+        animation-name: ldr-cartWheelStroke;
+      }
+      .rbt-preloader-cart-track {
+        stroke: rgba(136, 136, 136, 0.2);
+      }
+      @keyframes ldr-msg {
+        from {
+          opacity: 1;
+          visibility: visible;
+        }
+        99.9% {
+          opacity: 0;
+          visibility: visible;
+        }
+        to {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+      @keyframes ldr-cartLines {
+        from,
+        to {
+          opacity: 0;
+        }
+        8%,
+        92% {
+          opacity: 1;
+        }
+      }
+      @keyframes ldr-cartTop {
+        from {
+          stroke-dashoffset: -338;
+        }
+        50% {
+          stroke-dashoffset: 0;
+        }
+        to {
+          stroke-dashoffset: 338;
+        }
+      }
+      @keyframes ldr-cartWheel1 {
+        from {
+          transform: rotate(-0.25turn);
+        }
+        to {
+          transform: rotate(2.75turn);
+        }
+      }
+      @keyframes ldr-cartWheel2 {
+        from {
+          transform: rotate(0.25turn);
+        }
+        to {
+          transform: rotate(3.25turn);
+        }
+      }
+      @keyframes ldr-cartWheelStroke {
+        from,
+        to {
+          stroke-dashoffset: 81.68;
+        }
+        50% {
+          stroke-dashoffset: 40.84;
+        }
+      }
