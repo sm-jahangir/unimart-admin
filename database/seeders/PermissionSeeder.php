@@ -116,6 +116,139 @@ class PermissionSeeder extends Seeder
             'slug' => 'app.categories.destroy',
         ]);
 
+        // Product management
+        $moduleAppProduct = Module::updateOrCreate(['name' => 'Product Management']);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppProduct->id,
+            'name' => 'Access Products',
+            'slug' => 'app.products.index',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppProduct->id,
+            'name' => 'Create Product',
+            'slug' => 'app.products.create',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppProduct->id,
+            'name' => 'Edit Product',
+            'slug' => 'app.products.edit',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppProduct->id,
+            'name' => 'Delete Product',
+            'slug' => 'app.products.destroy',
+        ]);
+
+        // Order management
+        $moduleAppOrder = Module::updateOrCreate(['name' => 'Order Management']);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppOrder->id,
+            'name' => 'Access Orders',
+            'slug' => 'app.orders.index',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppOrder->id,
+            'name' => 'Edit Order',
+            'slug' => 'app.orders.edit',
+        ]);
+
+        // Coupon management
+        $moduleAppCoupon = Module::updateOrCreate(['name' => 'Coupon Management']);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppCoupon->id,
+            'name' => 'Access Coupons',
+            'slug' => 'app.coupons.index',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppCoupon->id,
+            'name' => 'Create Coupon',
+            'slug' => 'app.coupons.create',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppCoupon->id,
+            'name' => 'Edit Coupon',
+            'slug' => 'app.coupons.edit',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppCoupon->id,
+            'name' => 'Delete Coupon',
+            'slug' => 'app.coupons.destroy',
+        ]);
+
+        // Supplier management
+        $moduleAppSupplier = Module::updateOrCreate(['name' => 'Supplier Management']);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppSupplier->id,
+            'name' => 'Access Suppliers',
+            'slug' => 'app.suppliers.index',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppSupplier->id,
+            'name' => 'Create Supplier',
+            'slug' => 'app.suppliers.create',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppSupplier->id,
+            'name' => 'Edit Supplier',
+            'slug' => 'app.suppliers.edit',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppSupplier->id,
+            'name' => 'Delete Supplier',
+            'slug' => 'app.suppliers.destroy',
+        ]);
+
+        // Purchase management
+        $moduleAppPurchase = Module::updateOrCreate(['name' => 'Purchase Management']);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppPurchase->id,
+            'name' => 'Access Purchases',
+            'slug' => 'app.purchases.index',
+        ]);
+
+        // Storefront content (sliders, subscribers, units, barcodes)
+        $moduleAppContent = Module::updateOrCreate(['name' => 'Storefront Content']);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppContent->id,
+            'name' => 'Access Sliders',
+            'slug' => 'app.sliders.index',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppContent->id,
+            'name' => 'Manage Sliders',
+            'slug' => 'app.sliders.create',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppContent->id,
+            'name' => 'Access Subscribers',
+            'slug' => 'app.subscribers.index',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppContent->id,
+            'name' => 'Delete Subscribers',
+            'slug' => 'app.subscribers.destroy',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppContent->id,
+            'name' => 'Access Units',
+            'slug' => 'app.units.index',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppContent->id,
+            'name' => 'Manage Units',
+            'slug' => 'app.units.create',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppContent->id,
+            'name' => 'Access Barcodes',
+            'slug' => 'app.barcodes.index',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppContent->id,
+            'name' => 'Manage Barcodes',
+            'slug' => 'app.barcodes.create',
+        ]);
+
         // Role management
         $moduleAppRole = Module::updateOrCreate(['name' => 'Role Management']);
         Permission::updateOrCreate([

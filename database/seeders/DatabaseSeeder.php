@@ -18,6 +18,23 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
         ]);
 
+        // Catalog + inventory, in FK-safe order.
+        $this->call([
+            UnitSeeder::class,
+            BarcodeSeeder::class,
+            ProductAttributeSeeder::class,
+            ProductAttributeOptionSeeder::class,
+            SupplierSeeder::class,
+            ProductSeeder::class,
+            ProductVariationSeeder::class,
+            PurchaseSeeder::class,
+            StockSeeder::class,
+            CouponSeeder::class,
+            SliderSeeder::class,
+            SubscriberSeeder::class,
+            OrderSeeder::class,
+        ]);
+
         $adminRole = Role::where('slug', 'admin')->firstOrFail();
         $userRole = Role::where('slug', 'user')->firstOrFail();
 

@@ -166,12 +166,6 @@
               class="block rounded-base px-2 py-2 text-ink-500 transition-colors hover:bg-surface-muted hover:text-ink-900"
               >Add New Category</a
             >
-            <a
-              data-nav="edit-category"
-              href="edit-category.html"
-              class="block rounded-base px-2 py-2 text-ink-500 transition-colors hover:bg-surface-muted hover:text-ink-900"
-              >Edit Category</a
-            >
           </div>
         </div>
       </div>
@@ -211,12 +205,6 @@
               href="{{ route('app.brands.create') }}"
               class="block rounded-base px-2 py-2 text-ink-500 transition-colors hover:bg-surface-muted hover:text-ink-900"
               >Add New Brand</a
-            >
-            <a
-              data-nav="edit-brand"
-              href="edit-brand.html"
-              class="block rounded-base px-2 py-2 text-ink-500 transition-colors hover:bg-surface-muted hover:text-ink-900"
-              >Edit Brand</a
             >
           </div>
         </div>
@@ -399,42 +387,6 @@
       </div>
     </div>
 
-    <!-- Localization -->
-    <div data-nav-group data-open="false">
-      <button
-        type="button"
-        data-nav-trigger
-        title="Localization"
-        class="sidebar-link flex w-full items-center gap-3 rounded-base px-2 py-2 text-[14px] text-ink-700 transition-colors hover:bg-surface-muted"
-        aria-expanded="false"
-      >
-        <i data-lucide="globe" class="h-[18px] w-[18px] shrink-0 text-ink-500"></i>
-        <span class="nav-text flex-1 text-left">Localization</span>
-        <i
-          data-lucide="chevron-right"
-          data-nav-chevron
-          class="nav-text h-4 w-4 shrink-0 text-ink-400 transition-transform duration-300"
-        ></i>
-      </button>
-      <div data-nav-submenu class="nav-text grid grid-rows-[0fr] transition-all duration-300 ease-in-out">
-        <div class="overflow-hidden">
-          <div class="mt-0.5 space-y-0.5 pl-9 text-[13px]">
-            <a
-              data-nav="translation"
-              href="translation.html"
-              class="block rounded-base px-2 py-2 text-ink-500 transition-colors hover:bg-surface-muted hover:text-ink-900"
-              >Translation</a
-            >
-            <a
-              data-nav="currency-rates"
-              href="currency-rates.html"
-              class="block rounded-base px-2 py-2 text-ink-500 transition-colors hover:bg-surface-muted hover:text-ink-900"
-              >Currency Rates</a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- Coupons -->
     <div data-nav-group data-open="false">
@@ -490,27 +442,6 @@
       <span class="nav-text flex-1">Tax</span>
     </a>
 
-    <!-- Product Review -->
-    <a
-      data-nav="product-reviews"
-      href="product-reviews.html"
-      title="Product Reviews"
-      class="sidebar-link flex items-center gap-3 rounded-base px-2 py-2 text-[14px] text-ink-700 transition-colors hover:bg-surface-muted"
-    >
-      <i data-lucide="star" class="h-[18px] w-[18px] shrink-0 text-ink-500"></i>
-      <span class="nav-text flex-1">Product Reviews</span>
-    </a>
-
-    <!-- Support Ticket -->
-    <a
-      data-nav="support-tickets"
-      href="support-tickets.html"
-      title="Support Tickets"
-      class="sidebar-link flex items-center gap-3 rounded-base px-2 py-2 text-[14px] text-ink-700 transition-colors hover:bg-surface-muted"
-    >
-      <i data-lucide="life-buoy" class="h-[18px] w-[18px] shrink-0 text-ink-500"></i>
-      <span class="nav-text flex-1">Support Tickets</span>
-    </a>
 
     <!-- Settings -->
     <div data-nav-group data-open="false">
